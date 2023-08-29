@@ -1,4 +1,10 @@
+import { useDispatch } from "react-redux";
+import addBooking from "../../redux/Booking/actions";
+
 const BookingData = () => {
+const dispatch = useDispatch()
+
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const from = event.target.from.value;
@@ -10,7 +16,7 @@ const BookingData = () => {
 const FromData = {
     from, to, date, guests, ticketClass
 }
-console.log(FromData)
+dispatch(addBooking(FromData))
 
   };
 
